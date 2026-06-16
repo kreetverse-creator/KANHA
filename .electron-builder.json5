@@ -1,0 +1,33 @@
+.electron-builder.json5
+{
+  appId: 'com.kanha.neuralos',
+  productName: 'KANHA Neural OS',
+  directories: {
+    output: 'release/',
+    buildResources: 'assets/',
+  },
+  files: [
+    'dist/**/*',
+    'dist-electron/**/*',
+    'package.json',
+  ],
+  win: {
+    target: ['nsis', 'portable'],
+    certificateFile: null,
+  },
+  nsis: {
+    oneClick: false,
+    allowToChangeInstallationDirectory: true,
+    createDesktopShortcut: true,
+    createStartMenuShortcut: true,
+    shortcutName: 'KANHA Neural OS',
+  },
+  mac: {
+    target: ['dmg', 'zip'],
+    category: 'public.app-category.utilities',
+  },
+  linux: {
+    target: ['AppImage', 'deb'],
+    category: 'Utility',
+  },
+}
